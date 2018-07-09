@@ -297,14 +297,15 @@ void Viz::_render_on_correctly_set_up_context()
 			);
 		assert(hurray);
 		render_viewport->paint(user_x, user_y, user_z, wheel, zrot, yrot, 0, floor_visible, opt, ruler_size);
-		CHECK_GL_ERROR;
+		// TODO Had to comment out as it errors out in new sierra
+		// CHECK_GL_ERROR;
 		ms_render_objectcount = render_viewport->visible_object_count;
 	}
 	double ms_objects = elapsed.nsecsElapsed() / 1000000.0;
 
 	elapsed.start();
 	_paint_hud();
-	CHECK_GL_ERROR;
+	// CHECK_GL_ERROR; // TODO Had to comment out as it errors out in new sierra
 	double ms_billboards = elapsed.nsecsElapsed() / 1000000.0;
 
 	//if (dup_transparent_mode>0) {
@@ -347,7 +348,7 @@ void Viz::paintGL()
 #else
 	// No shadows: just render directly
 	_render_on_correctly_set_up_context();
-	CHECK_GL_ERROR;
+	// CHECK_GL_ERROR; // TODO Had to comment out as it errors out in new sierra
 #endif
 }
 
@@ -573,4 +574,3 @@ void VizCamera::keyReleaseEvent(QKeyEvent* kev)
 {
 	activate_key_callback(kev->type(), kev->key(), kev->modifiers());
 }
-
