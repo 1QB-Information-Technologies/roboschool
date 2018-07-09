@@ -41,7 +41,7 @@ ifeq ($(UNAME),Darwin)
   PKG   =pkg-config
   LIBS  =-framework OpenGL
   INC   =-I/System/Library/Frameworks/OpenGL.framework/Headers
-  BOOST_PYTHON3_POSTFIX = 3
+  BOOST_PYTHON3_POSTFIX = 37
   BOOST_MT=-mt
   PYTHON = $(shell python3 -c "import sys; print('%i.%i' % sys.version_info[:2])")
   RPATH =

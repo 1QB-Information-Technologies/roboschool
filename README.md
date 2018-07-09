@@ -6,7 +6,7 @@ NEWS
 
 * All envs version bumped to “-v1", due to stronger stuck joint punishment, that improves odds of getting a good policy.
 * Flagrun-v1 is much more likely to develop a symmetric gait,
-* FlagrunHarder-v1 has new "repeat-underlearned" learning schedule, that allows it to be trained to stand up, walk and turn without falling. 
+* FlagrunHarder-v1 has new "repeat-underlearned" learning schedule, that allows it to be trained to stand up, walk and turn without falling.
 * Atlas robot model, modified (empty links removed, overly powerful feet weakaned).
 * All -v1 envs are shipped with better zoo policies, compared to May versions.
 * Keyboard-controlled humanoid included.
@@ -101,7 +101,7 @@ The dependencies are gym, Qt5, assimp, tinyxml, and bullet (from a branch). For 
     # Will not work on Mavericks: unsupported by homebrew, some libraries won't compile, upgrade first
     brew install python3
     brew install cmake tinyxml assimp ffmpeg qt
-    brew reinstall boost-python --without-python --with-python3 --build-from-source
+    brew reinstall boost-python3 --build-from-source
     export PATH=/usr/local/bin:/usr/local/opt/qt5/bin:$PATH
     export PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig
     ```
@@ -110,7 +110,7 @@ The dependencies are gym, Qt5, assimp, tinyxml, and bullet (from a branch). For 
 
     ```bash
     brew install cmake tinyxml assimp ffmpeg
-    brew reinstall boost-python --without-python --with-python3 --build-from-source
+    brew reinstall boost-python3 --build-from-source
     conda install qt
     export PKG_CONFIG_PATH=$(dirname $(dirname $(which python)))/lib/pkgconfig
     ```
